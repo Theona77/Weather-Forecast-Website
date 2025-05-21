@@ -59,13 +59,37 @@
                     </li>
 
                 </ul>
+
+            
             </div>
+
+            <div class="day-stats">
+                <h2 class="Title_For">5 Days Forecast</h2>
+                <div class="day-forecast">
+                    {% for forecast in daily_forecasts %}
+                    <div class="f0recast-itemmm">
+                        <div class="icon-wrapperrr">
+                            <img src="https://openweathermap.org/img/wn/{{ forecast.icon }}.png" alt="weather icon">
+                            <span>{{ forecast.temp }}&deg;C</span>
+                            <p class="doydoy">{{ forecast.day }}</p>
+                            <p class="doydoy">{{ forecast.date }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+
+
             <img src="{% static 'img/side-blur.png' %}" class="side-blur" alt="blur">
         </section>
 
         <section class="main-container">
             <h4 class="secondary-title">Weather Forecast</h4>
             <h1 class="weather__primary-title">{{ description }}</h1>
+        
+
             <div class="weather__location">
                 <div style="width: 15px; height:15px; color: white;" class="location-icon">
                     <i class="bi bi-geo-alt"></i>
@@ -73,6 +97,7 @@
                 <p class="weather__location-text">
                     <span class="weather__location-city">{{ city }}</span>
                     <span class="weather__location-country">{{ country }}</span>
+                    <span class="weather__location-date">{{ date }}, </span>
                     <span class="weather__location-city">{{ time }}</span>
                 </p>
             </div>
@@ -98,6 +123,7 @@
                     <p class="forecastWindText">
                         Humidity: <span class="forecast-humidityValue">{{ hum1 }}</span>
                     </p>
+                
                     
                 </li>
 
@@ -110,6 +136,7 @@
                     <p class="forecastWindText">
                         Humidity: <span class="forecast-humidityValue">{{ hum2 }}</span>
                     </p>
+                
                     
                 </li>
 
@@ -122,6 +149,7 @@
                     <p class="forecastWindText">
                         Humidity: <span class="forecast-humidityValue">{{ hum3 }}</span>
                     </p>
+                   
                     
                 </li>
 
@@ -134,6 +162,7 @@
                     <p class="forecastWindText">
                         Humidity: <span class="forecast-humidityValue">{{ hum4 }}</span>
                     </p>
+                
                     
                 </li>
 
@@ -146,6 +175,7 @@
                     <p class="forecastWindText">
                         Humidity: <span class="forecast-humidityValue">{{ hum5 }}</span>
                     </p>
+                   
                     
                 </li>
             </ul>
